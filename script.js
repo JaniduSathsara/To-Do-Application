@@ -1,9 +1,14 @@
-console.log("hi");
+const toDoList = []
 
-function createCard() {
+function btnAdd() {
+    let title = document.getElementById("lblTitle").value;
+    let description = document.getElementById("lblDescription").value;
 
-}
-
-function btnAddWindow() {
+    toDoList.push(
+        {
+            cardTitle:title,
+            cardDescription:description
+        }
+    )
 
 }

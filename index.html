@@ -21,9 +21,9 @@
             <div class="sm:col-6 mb-3 sm:mb-0">
                 <div class="card">
                     <div class="card-body">
-                        <input type="text" class="form-control" placeholder="Enter Title" >
-                        <input type="text" class="form-control" placeholder="Enter Description" >
-                        <button type="button" class="btn-solid theme-primary">ADD</button>
+                        <input id="lblTitle" type="text" class="form-control" placeholder="Enter Title" >
+                        <input id="lblDescription" type="text" class="form-control" placeholder="Enter Description" >
+                        <button onclick="btnAdd()" type="button" class="btn-solid theme-primary">ADD</button>
                     </div>
                 </div>
             </div>
@@ -39,9 +39,9 @@
                 <h4 class="card-title">Title</h4>
                 <p class="card-text">Description</p>
                 <div class="container">
-                    <button type="button" class="btn-outline theme-primary">Edit</button>
-                    <button type="button" class="btn-outline theme-danger">Delete</button>
-                    <button type="button" class="btn-outline theme-success">Done</button>
+                    <button type="button" class="btn-outline theme-primary">✎</button>
+                    <button type="button" class="btn-outline theme-danger">🗑</button>
+                    <button type="button" class="btn-outline theme-success">✓</button>
                 </div>
             </div>
             <div class="card-footer fg-2">
