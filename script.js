@@ -18,27 +18,32 @@ function btnAdd() {
         <hr>
         <tr>
             <td>
-                <div class="card text-center container">
-                    <div class="card-header">
-                        Task No : ${taskNum}
-                    </div>
-                    <div class="card-body">
-                        <h4 class="card-title" id="lblttle">${title}</h4>
-                        <p class="card-text" id="lblDesc">${description}</p>
-                        <div class="container">
-                            <button type="button" class="btn-outline theme-primary" onclick="btnEdit()">✎</button>
-                            <button type="button" class="btn-outline theme-danger" onclick="btnDelete()">🗑</button>
-                            <button type="button" class="btn-outline theme-success" onclick="btnDone()">✓</button>
+                <div class = "container">
+                    <div class="card text-center ">
+                        <div class="card-header">
+                            Task No : ${taskNum}
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title" id="lblttle">${title}</h4>
+                            <p class="card-text" id="lblDesc">${description}</p>
+                            <div class="container">
+                                <button type="button" class="btn-outline theme-primary" onclick="btnEdit()">✎</button>
+                                <button type="button" class="btn-outline theme-danger" onclick="btnDelete()">🗑</button>
+                                <button type="button" class="btn-outline theme-success" onclick="btnDone()">✓</button>
+                            </div>
+                        </div>
+                        <div class="card-footer fg-2">
+                            ToDo works
                         </div>
                     </div>
-                    <div class="card-footer fg-2">
-                        ToDo works
-                    </div>
-                </div>
+                <div>
             </td>
         <tr>`
 
     document.getElementById("toDoCards").innerHTML += body;
+
+    console.log(toDoList);
+
 
 }
 
@@ -59,6 +64,11 @@ function btnDelete() {
             icon: "success"
         });
     });
+}
+
+function btnEdit() {
+
+    
 }
 
 function btnDone() {
