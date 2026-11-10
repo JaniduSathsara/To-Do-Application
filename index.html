@@ -16,13 +16,14 @@
 <body>
     <h1>TO do Application</h1>
 
-    <div>
-        <div class="row">
+
+    <div class="container">
+        <div class="row container">
             <div class="sm:col-6 mb-3 sm:mb-0">
                 <div class="card">
                     <div class="card-body">
-                        <input id="lblTitle" type="text" class="form-control" placeholder="Enter Title" >
-                        <input id="lblDescription" type="text" class="form-control" placeholder="Enter Description" >
+                        <input id="lblTitle" type="text" class="form-control" placeholder="Enter Title">
+                        <input id="lblDescription" type="text" class="form-control" placeholder="Enter Description">
                         <button onclick="btnAdd()" type="button" class="btn-solid theme-primary">ADD</button>
                     </div>
                 </div>
@@ -31,30 +32,34 @@
 
         <br><br>
 
-        <div class="card text-center">
+        <!-- <div class="card text-center container">
             <div class="card-header">
                 Date
             </div>
             <div class="card-body">
-                <h4 class="card-title">Title</h4>
-                <p class="card-text">Description</p>
+                <h4 class="card-title" id="lblttle">Title</h4>
+                <p class="card-text" id="lblDesc">Description</p>
                 <div class="container">
-                    <button type="button" class="btn-outline theme-primary">✎</button>
-                    <button type="button" class="btn-outline theme-danger">🗑</button>
-                    <button type="button" class="btn-outline theme-success">✓</button>
+                    <button type="button" class="btn-outline theme-primary" onclick="btnEdit()">✎</button>
+                    <button type="button" class="btn-outline theme-danger" onclick="btnDelete()">🗑</button>
+                    <button type="button" class="btn-outline theme-success" onclick="btnDone()">✓</button>
                 </div>
             </div>
             <div class="card-footer fg-2">
                 ToDo works
             </div>
-        </div>
+        </div> -->
 
-        <div id="toDoCards">
+        <table border="1">
+            <tr id="toDoCards">
 
-        </div>
+            </tr>
+
+        </table>
 
 
         <script src="script.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 
 </html>
