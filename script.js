@@ -66,13 +66,28 @@ function btnDelete() {
     });
 }
 
-function btnEdit() {
 
-    
+
+async function btnEdit() {
+    const { value: formValues } = await Swal.fire({
+        title: "Edit Title and Description",
+        html: `
+    <input id="swal-input1" class="swal2-input" placeholder = "Enter new Title">
+    <input id="swal-input2" class="swal2-input" placeholder = "Enter new Description">
+  `,
+        focusConfirm: false,
+        preConfirm: () => {
+            return [document.getElementById("swal-input1").value, document.getElementById("swal-input2").value];
+        }
+    });
+    if (formValues) {
+        document.getElementById("lblttle").innerText = formValues[0];
+        document.getElementById("lblDesc").innerText = formValues[1];
+    }
 }
 
 function btnDone() {
-
+    document.getElementById("toDoCards").value = null;
 }
 
 function btnMode() {
