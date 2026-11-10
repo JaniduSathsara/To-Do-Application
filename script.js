@@ -18,7 +18,7 @@ function btnAdd() {
         <hr>
         <tr>
             <td>
-                <div class = "container">
+                <div id = "lblTaskCard" class = "container">
                     <div class="card text-center ">
                         <div class="card-header">
                             Task No : ${taskNum}
@@ -58,11 +58,20 @@ function btnDelete() {
         cancelButtonColor: "#d33",
         confirmButtonText: "Yes, delete it!"
     }).then((result) => {
-        if (result.isConfirmed) Swal.fire({
-            title: "Deleted!",
-            text: "Your file has been deleted.",
-            icon: "success"
-        });
+        if (result.isConfirmed) {
+            toDoList.splice(1)
+            const toDoCards = document.getElementById("toDoCards");
+
+            if (toDoCards && toDoCards.lastElementChild) {
+                toDoCards.removeChild(toDoCards.lastElementChild);
+            }
+
+            Swal.fire({
+                title: "Deleted!",
+                text: "Your file has been deleted.",
+                icon: "success"
+            });
+        }
     });
 }
 
@@ -87,13 +96,5 @@ async function btnEdit() {
 }
 
 function btnDone() {
-    document.getElementById("toDoCards").value = null;
-}
-
-function btnMode() {
-
-    Swal.fire({
-        title: 'Bootstrap 4 theme',
-        theme: 'bootstrap-4-light'
-    })
+    document.getElementById("toDoCards").value = null
 }
