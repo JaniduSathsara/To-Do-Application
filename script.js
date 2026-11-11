@@ -28,7 +28,7 @@ function btnAdd() {
                             <p class="card-text" id="lblDesc">${description}</p>
                             <div class="container">
                                 <button type="button" class="btn-outline theme-primary" onclick="btnEdit()">✎</button>
-                                <button type="button" class="btn-outline theme-danger" onclick="btnDelete()">🗑</button>
+                                <button type="button" class="btn-outline theme-danger" onclick="btnDelete()">x</button>
                                 <button type="button" class="btn-outline theme-success" onclick="btnDone()">✓</button>
                             </div>
                         </div>
