@@ -19,7 +19,6 @@ function btnAdd() {
         id: taskNum,
         cardTitle: title,
         cardDescription: description,
-        isDone: false
     });
 
     let body = `
@@ -66,7 +65,6 @@ function btnAdd() {
 
 
 function btnDelete(id) {
-
     Swal.fire({
         title: "Are you sure?",
         text: "You won't be able to revert this!",
@@ -97,27 +95,29 @@ function btnDelete(id) {
 }
 
 
+
 async function btnEdit(id) {
-
     const task = toDoList.find(task => task.id === id);
-
     if (!task) return;
 
     const { value: formValues } = await Swal.fire({
         title: "Edit Title and Description",
-        input: "text",
-        inputValue: task.cardTitle,
 
         html: `
         <input id="swal-input1" class="swal2-input" placeholder="Enter new Title" value="${task.cardTitle}">
         <input id="swal-input2" class="swal2-input" placeholder="Enter new Description" value="${task.cardDescription}">
-    `,
+        `,
 
         focusConfirm: false,
 
         preConfirm: () => {
             let title = document.getElementById("swal-input1").value;
             let description = document.getElementById("swal-input2").value;
+
+            if (title.trim() === "" || description.trim() === "") {
+                Swal.showValidationMessage("Fields cannot be empty!");
+                return false;
+            }
 
             return {
                 title: title,
@@ -126,44 +126,30 @@ async function btnEdit(id) {
         }
     });
 
-
     if (formValues) {
 
-        if (formValues) {
+        task.cardTitle = formValues.title;
+        task.cardDescription = formValues.description;
 
-            if (formValues.title === "" || formValues.description === "") {
-                Swal.fire("Error!", "Fields cannot be empty!", "error");
-                return;
-            }
-
-            task.cardTitle = formValues.title;
-            task.cardDescription = formValues.description;
-
-            document.getElementById(`lblttle${id}`).innerText = formValues.title;
-            document.getElementById(`lblDesc${id}`).innerText = formValues.description;
-        }
+        document.getElementById(`lblttle${id}`).innerText = formValues.title;
+        document.getElementById(`lblDesc${id}`).innerText = formValues.description;
     }
 }
 
 
 function btnDone(id) {
-    const task = toDoList.find(task => task.id === id);
-    if (!task) return;
-
-    task.isDone = !task.isDone;
 
     const title = document.getElementById(`lblttle${id}`);
     const description = document.getElementById(`lblDesc${id}`);
     const footer = document.getElementById(`footer${id}`);
 
-    if (task.isDone) {
-        title.style.textDecoration = "line-through";
-        description.style.textDecoration = "line-through";
-        footer.innerText = "Completed";
+    title.style.textDecoration = "line-through";
+    description.style.textDecoration = "line-through";
 
-        document.getElementById(`btnDone${id}`).disabled = true;
-        document.getElementById(`btnDelete${id}`).disabled = true;
-        document.getElementById(`btnEdit${id}`).disabled = true;
-    }
+    footer.innerText = "Completed";
+
+    document.getElementById(`btnDone${id}`).disabled = true;
+    document.getElementById(`btnDelete${id}`).disabled = true;
+    document.getElementById(`btnEdit${id}`).disabled = true;
 
 }
