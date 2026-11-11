@@ -15,27 +15,29 @@
 
 <body>
     <h1 class="text-center">To do Application</h1>
-
     <hr>
-
     <div class="container">
         <div class="card">
             <div class="card-body">
                 <h3 class="text-center mb-5">Create new Task</h3>
                 <div class="row">
                     <div class="col">
-                        <input id="lblTitle" type="text" class="form-control" placeholder="Enter Title" aria-label="First name">
+                        <input id="lblTitle" type="text" class="form-control" placeholder="Enter Title"
+                            aria-label="First name">
                     </div>
                     <div class="col">
-                        <input id="lblDescription" type="text" class="form-control" placeholder="Enter Description" aria-label="Last name">
+                        <input id="lblDescription" type="text" class="form-control" placeholder="Enter Description"
+                            aria-label="Last name">
                     </div>
                 </div>
-               <button class="justify-content-center mt-5" onclick="btnAdd()" type="button" class="btn-solid theme-primary">Add new ToDo task</button>
+                <button class="justify-content-center mt-5 mb-5
+               " onclick="btnAdd()" type="button" class="btn-solid theme-primary">Add new ToDo task</button>
             </div>
         </div>
     </div>
-    <br><br>
-    <table class="container">
+    <br>
+    <h2 class="text-center">To Do List</h2>
+    <table>
         <tr id="toDoCards">
 
         </tr>
@@ -43,8 +45,11 @@
     </table>
 
 
-    <script src="script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+   
+
+            <script src="script.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 
 </html>

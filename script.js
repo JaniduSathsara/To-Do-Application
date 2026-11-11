@@ -47,7 +47,6 @@ function btnAdd() {
 
 }
 
-
 function btnDelete() {
     Swal.fire({
         title: "Are you sure?",
@@ -74,8 +73,6 @@ function btnDelete() {
         }
     });
 }
-
-
 
 async function btnEdit() {
     const { value: formValues } = await Swal.fire({
