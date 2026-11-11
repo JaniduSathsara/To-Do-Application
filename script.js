@@ -104,8 +104,8 @@ async function btnEdit(id) {
         title: "Edit Title and Description",
 
         html: `
-        <input id="swal-input1" class="swal2-input" placeholder="Enter new Title" value="${task.cardTitle}">
-        <input id="swal-input2" class="swal2-input" placeholder="Enter new Description" value="${task.cardDescription}">
+            <input id="swal-input1" class="swal2-input" placeholder="Enter new Title" value="${task.cardTitle}">
+            <input id="swal-input2" class="swal2-input" placeholder="Enter new Description" value="${task.cardDescription}">
         `,
 
         focusConfirm: false,
@@ -114,7 +114,7 @@ async function btnEdit(id) {
             let title = document.getElementById("swal-input1").value;
             let description = document.getElementById("swal-input2").value;
 
-            if (title.trim() === "" || description.trim() === "") {
+            if (title === "" || description === "") {
                 Swal.showValidationMessage("Fields cannot be empty!");
                 return false;
             }
@@ -127,7 +127,6 @@ async function btnEdit(id) {
     });
 
     if (formValues) {
-
         task.cardTitle = formValues.title;
         task.cardDescription = formValues.description;
 
