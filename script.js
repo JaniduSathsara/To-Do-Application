@@ -63,7 +63,6 @@ function btnAdd() {
     console.log(toDoList);
 }
 
-
 function btnDelete(id) {
     Swal.fire({
         title: "Are you sure?",
